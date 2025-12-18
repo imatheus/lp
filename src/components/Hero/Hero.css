@@ -1,0 +1,134 @@
+.hero {
+  padding-top: calc(var(--header-h) + 60px);
+  padding-bottom: 0; /* Removido padding bottom para a imagem vazar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* overflow: hidden; */ /* Removido para permitir que a imagem passe do limite */
+}
+
+/* Background sólido com cantos arredondados */
+.hero-bg {
+  position: absolute;
+  top: 100px;
+  left: 24px;
+  right: 24px;
+  bottom: 320px;
+  z-index: 0;
+  border-radius: 32px;
+  background: #d4d4d400;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  margin: 24px 0;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(135deg, #84fab0, #8fd3f4, #d1f063, #56ab2f);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hero-subtitle {
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ReactFlow */
+.hero-flow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.hero-flow-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.xyflow-wrapper {
+  width: 100%;
+  max-width: var(--container-max);
+  padding: 0 24px;
+}
+
+.xyflow-canvas {
+  height: 800px; /* Aumentado para acomodar a imagem vazando */
+  width: 100%;
+  overflow: visible !important; /* Permite que os nós vazem do canvas se necessário */
+}
+
+.xyflow-canvas .react-flow__node {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(28, 64, 59, 0.06);
+}
+
+.xyflow-canvas .react-flow__handle {
+  opacity: 0 !important;
+}
+
+.xyflow-canvas .react-flow__pane,
+.xyflow-canvas .react-flow__nodes,
+.xyflow-canvas .react-flow__edges {
+  pointer-events: none !important;
+}
+
+.hero-preview {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: calc(var(--header-h) + 40px);
+    min-height: auto;
+  }
+  
+  .hero-title br { display: none; }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .xyflow-canvas {
+    height: 380px;
+  }
+}

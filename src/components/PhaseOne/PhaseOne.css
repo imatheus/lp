@@ -1,0 +1,16 @@
+/* Seção PhaseOne */
+.phase-one > .container { max-width: var(--container-max); margin: 42px auto 32px; padding: 0 8px; }
+
+/* Grid fases */
+.phase-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.box { background: var(--primary); border-radius: 30px; min-height: 160px; }
+
+@media (min-width: 992px) {
+  .phase-grid { grid-template-columns: 7fr 5fr; }
+  .box-x { grid-column: 1; grid-row: 1; }
+  .box-y { grid-column: 2; grid-row: 1; }
+  .box-z { grid-column: 1 / span 2; grid-row: 2; min-height: 220px; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .phase-grid { grid-template-columns: 2fr 1fr; }
+}

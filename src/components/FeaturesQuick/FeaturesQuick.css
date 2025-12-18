@@ -1,0 +1,61 @@
+/* Features rápidas */
+.features-quick > .container {
+  max-width: var(--container-max);
+  margin: 12px auto 4px;
+  padding: 0 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.features-quick .f-item { 
+  border-radius: 14px; 
+  padding: 16px 14px; 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features-quick .f-icon { 
+  font-size: 26px; 
+  color: var(--primary-strong); 
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+}
+
+.features-quick .f-icon-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.features-quick .f-title { 
+  color: #112421; 
+  font-size: 18px; 
+  margin: 8px 0 6px;
+  text-align: center;
+}
+
+.features-quick .f-desc { 
+  color: var(--muted); 
+  font-size: 15px; 
+  line-height: 1.6; 
+  display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-card .features-quick .f-item { background: rgba(255,255,255,.06); }
+.hero-card .features-quick .f-icon,
+.hero-card .features-quick .f-title { color: #fff; }
+.hero-card .features-quick .f-desc { color: rgba(255,255,255,.9); }
+
+@media (min-width: 768px) {
+  .features-quick > .container { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+}
