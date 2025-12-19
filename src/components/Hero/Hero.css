@@ -1,28 +1,29 @@
 .hero {
   padding-top: calc(var(--header-h) + 60px);
-  padding-bottom: 0; /* Removido padding bottom para a imagem vazar */
+  padding-bottom: 0;
+    /* Removido padding bottom para a imagem vazar */
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   position: relative;
-  /* overflow: hidden; */ /* Removido para permitir que a imagem passe do limite */
+  /* overflow: hidden; */
+    /* Removido para permitir que a imagem passe do limite */
 }
 
 /* Background sólido com cantos arredondados */
 .hero-bg {
   position: absolute;
-  top: 10px;
   left: 24px;
   right: 24px;
   bottom: 320px;
   z-index: 0;
   border-radius: 32px;
-  background: #d4d4d400;
 }
 
 .hero-content {
+  top: 30px;
   text-align: center;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -42,14 +43,21 @@
 }
 
 @keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .hero-subtitle {
   max-width: 800px;
   margin: 0 auto 40px;
 }
+
 .hero-actions {
   display: flex;
   justify-content: center;
@@ -58,13 +66,15 @@
 }
 
 .hero-flow-section {
-  background-color: #eeeeee33;
+  background-color: #d2f48f;
   border: 1px solid #eeeeee;
-  margin: 50px 24px 60px;
+  margin: 0px 15px 60px;
   border-radius: 40px;
-  padding: 80px 0 0;
-  overflow: hidden;
+  padding: 60px 1px 10px;
+    margin-top: 100px;
+    overflow: visible;
 }
+
 /* ReactFlow */
 .hero-flow {
   display: flex;
@@ -83,15 +93,16 @@
 
 .hero-flow-label {
   font-size: 0.9em;
-    font-weight: 700;
-    position: relative;
+  font-weight: 700;
+  top: 5px;
+  position: relative;
     z-index: 1;
   }
   
   /* SVG do círculo desenhado à mão */
   .hand-drawn-circle {
     position: absolute;
-    top: 50%;
+  top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: calc(100% + 45px);
@@ -99,11 +110,11 @@
     pointer-events: none;
     z-index: 2;
     overflow: visible;
-    
+  
   }
   
   .sketch-path {
-    stroke: var(--secondary);
+  stroke: var(--primary);
     stroke-dasharray: 800;
     stroke-dashoffset: 800;
     transition: stroke-dashoffset 0s;
@@ -139,11 +150,12 @@
 
 .xyflow-wrapper {
   width: 100%;
-  padding: 0;
+  padding: 0 30px;
+    box-sizing: border-box;
 }
 
 .xyflow-canvas {
-  height: 800px;
+  height: 850px;
   width: 100%;
   overflow: visible !important;
 }
@@ -151,8 +163,18 @@
 .xyflow-canvas .react-flow__node {
   background: #fff;
   border: 1.5px solid var(--border);
-  border-radius: 50%;
+  border-radius: 5px;
   box-shadow: 0 4px 16px rgba(28, 64, 59, 0.06);
+  overflow: visible;
+  }
+  
+  /* Preview node - remove default styles */
+  .xyflow-canvas .react-flow__node[data-id="preview"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
 }
 
 .xyflow-canvas .react-flow__handle {
@@ -167,8 +189,7 @@
 
 .hero-preview {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
+  border-radius: 30px;
   display: block;
 }
 
@@ -178,19 +199,20 @@
     padding-top: calc(var(--header-h) + 40px);
     min-height: auto;
   }
-  
-  .hero-title br { display: none; }
-  
+
+                                .hero-title br {
+                                  display: none;
+                                }
   .hero-actions {
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .hero-actions .btn {
     width: 100%;
     max-width: 300px;
   }
-  
+
   .xyflow-canvas {
     height: 380px;
   }

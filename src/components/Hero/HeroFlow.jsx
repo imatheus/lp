@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import { ReactFlow, useNodesState, useEdgesState } from '@xyflow/react';
-import { FaInstagram, FaWhatsapp, FaFacebook, FaGlobe, FaTelegram } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp, FaFacebook, FaTiktok, FaTelegram } from 'react-icons/fa';
 import './Hero.css';
 
 function HeroFlow() {
@@ -45,16 +45,16 @@ function HeroFlow() {
     { id: 'ig', position: { x: 0, y: 0 }, data: { label: <FaInstagram size={iconSize} color="#1C403B" /> }, style: getIconStyle('transparent', '#1C403B') },
     { id: 'fb', position: { x: 0, y: 0 }, data: { label: <FaFacebook size={iconSize} color="#1C403B" /> }, style: getIconStyle('transparent', '#1C403B') },
     { id: 'tg', position: { x: 0, y: 0 }, data: { label: <FaTelegram size={iconSize} color="#1C403B" /> }, style: getIconStyle('transparent', '#1C403B') },
-    { id: 'web', position: { x: 0, y: 0 }, data: { label: <FaGlobe size={iconSize} color="#1C403B" /> }, style: getIconStyle('transparent', '#1C403B') },
+    { id: 'tiktok', position: { x: 0, y: 0 }, data: { label: <FaTiktok size={iconSize} color="#1C403B" /> }, style: getIconStyle('transparent', '#1C403B') },
     {
       id: 'preview',
       position: { x: 0, y: 0 },
       style: { 
-        background: '#fff', 
-        border: '1px solid #E5EBE8', 
+        background: 'transparent',
+        border: 'none', 
         padding: 0, 
-        boxShadow: '0 20px 60px rgba(28, 64, 59, 0.08)',
-        borderRadius: isMobile ? 12 : 20 
+        boxShadow: 'none',
+        borderRadius: 0
       },
       data: { label: <img src="banner.png" alt="Lemify" className="hero-preview" /> },
     },
@@ -65,7 +65,7 @@ function HeroFlow() {
     { id: 'e2', source: 'ig', target: 'preview', animated: true, style: { stroke: '#1C403B', strokeDasharray: '8 6', strokeWidth: 2 } },
     { id: 'e3', source: 'fb', target: 'preview', animated: true, style: { stroke: '#1C403B', strokeDasharray: '8 6', strokeWidth: 2 } },
     { id: 'e4', source: 'tg', target: 'preview', animated: true, style: { stroke: '#1C403B', strokeDasharray: '8 6', strokeWidth: 2 } },
-    { id: 'e5', source: 'web', target: 'preview', animated: true, style: { stroke: '#1C403B', strokeDasharray: '8 6', strokeWidth: 2 } },
+    { id: 'e5', source: 'tiktok', target: 'preview', animated: true, style: { stroke: '#1C403B', strokeDasharray: '8 6', strokeWidth: 2 } },
   ], []);
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
@@ -79,11 +79,11 @@ function HeroFlow() {
     const height = el.clientHeight;
     if (!width || !height) return;
 
-    const padding = isMobile ? 8 : 0;
-    const imageWidth = Math.min(1600, width - padding * 2);
+    const margin = isMobile ? 20 : 40; // margem em cada lado
+    const imageWidth = width - (margin * 2);
     const centerX = width / 2;
     const spacing = isMobile ? 60 : 100;
-    const topY = 30;
+    const topY = 0;
     const halfNode = nodeSize / 2;
 
     const positions = {
@@ -91,12 +91,12 @@ function HeroFlow() {
       ig: centerX - spacing,
       wa: centerX,
       fb: centerX + spacing,
-      web: centerX + spacing * 2
+      tiktok: centerX + spacing * 2
     };
 
     setNodes(ns => ns.map(n => {
       if (n.id === 'preview') {
-        return { ...n, position: { x: centerX - imageWidth / 2, y: topY + nodeSize + 150 }, style: { ...n.style, width: imageWidth } };
+        return { ...n, position: { x: margin, y: topY + nodeSize + 125 }, style: { ...n.style, width: imageWidth } };
       }
       if (positions[n.id]) {
         return { ...n, position: { x: positions[n.id] - halfNode, y: topY } };
@@ -116,9 +116,9 @@ function HeroFlow() {
       <div className="container">
         <div className="section-header">
           <h2 className="heading-lg">
-            Todos os seus canais. Uma única caixa de entrada,  
+            Todos os seus canais em uma única caixa de entrada.<br /> 
             <span className={`hero-flow-heading-badge ${isScrolled ? 'animated' : ''}`}>
-              <span className="hero-flow-label">zero caos.</span>
+              <span className="hero-flow-label">zero caos</span>
               <svg className="hand-drawn-circle" viewBox="0 0 260 60" preserveAspectRatio="none">
                 <path
                   className="sketch-path"

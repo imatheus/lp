@@ -40,7 +40,9 @@ function Header({ scrolled }) {
   return (
     <header className={`header${scrolled ? ' scrolled' : ''}`}>
       <div className="header-inner">
-        <a href="/" className="header-brand">Lemify</a>
+        <a href="/" className="header-brand">
+          <img src="/logo.png" alt="Lemify" className="header-logo" />
+        </a>
 
         <nav className="header-nav">
           <a

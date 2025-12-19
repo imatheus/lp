@@ -39,6 +39,18 @@
   color: var(--primary);
   text-decoration: none;
   letter-spacing: -0.02em;
+  display: flex;
+    align-items: center;
+  }
+  
+  .header-logo {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s var(--ease-smooth);
+  }
+  
+  .header-brand:hover .header-logo {
+    transform: scale(1.05);
 }
 
 /* ═══════════════════════════════════════════════════════════════
