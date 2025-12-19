@@ -44,6 +44,13 @@ function Header({ scrolled }) {
 
         <nav className="header-nav">
           <a
+            href="#"
+            className={activeSection === '' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); setActiveSection(''); }}
+          >
+            Início
+          </a>
+          <a
             href="#features"
             className={activeSection === 'features' ? 'active' : ''}
             onClick={(e) => handleClick(e, 'features')}
@@ -71,7 +78,7 @@ function Header({ scrolled }) {
             Entrar
           </a>
           <a className="btn btn-primary" href="https://app.lemify.com.br/signup">
-            Começar grátis
+            Cadastre-se
           </a>
         </div>
       </div>

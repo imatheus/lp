@@ -11,13 +11,14 @@ function Showcase() {
         <div className="section-header">
           <h2 className="heading-lg">Funcionalidades que resolvem de verdade</h2>
           <p className="text-lg">
-            Do primeiro contato à conversão, cada detalhe pensado para otimizar seu atendimento.
+            Do primeiro contato à conversão, o Lemify otimiza cada etapa do seu atendimento.
+
           </p>
         </div>
         
         <div className="showcase-grid">
           {/* Card 1 - IA */}
-          <div className="showcase-card showcase-card--light">
+          <div className="showcase-card showcase-card--light showcase-card--ai">
             <div className="showcase-content">
               <span className="showcase-badge">Inteligência Artificial</span>
               <h3 className="showcase-title">Atendimento rápido com IA</h3>

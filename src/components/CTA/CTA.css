@@ -1,10 +1,197 @@
+/* ═══════════════════════════════════════════════════════════════
+   SISTEMA DE BOTÕES - LEMIFY
+   Este arquivo centraliza todos os estilos de botões da LP.
+   Importe este arquivo para usar os botões em qualquer componente.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════
+   BOTÃO BASE
+   ═══════════════════════════════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 28px;
+  border-radius: 17px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s var(--ease-smooth);
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VARIANTES DE BOTÃO
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Primary - Verde escuro */
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(28, 64, 59, 0.2);
+}
+
+/* Secondary - Verde lima */
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(209, 240, 99, 0.35);
+}
+
+/* Outline - Borda */
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  background: rgba(28, 64, 59, 0.03);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TAMANHOS
+   ═══════════════════════════════════════════════════════════════ */
+.btn-sm {
+  height: 36px;
+  padding: 0 18px;
+  font-size: 13px;
+}
+
+.btn-lg {
+  height: 56px;
+  padding: 0 36px;
+  font-size: 16px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO CTA COMPLETA
+   ═══════════════════════════════════════════════════════════════ */
 .cta {
   padding: var(--section-space) 0;
 }
 
-.cta-card {
+/* ═══════════════════════════════════════════════════════════════
+   VARIANTE PRIMARY (padrão) - Fundo verde escuro
+   ═══════════════════════════════════════════════════════════════ */
+.cta-primary .cta-card {
   background: var(--primary);
-  border-radius: 32px;
+}
+
+.cta-primary .cta-title {
+  color: #fff;
+}
+
+.cta-primary .cta-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-primary .btn-secondary {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.cta-primary .btn-secondary:hover {
+  background: var(--secondary-light);
+}
+
+.cta-primary .btn-outline {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.cta-primary .btn-outline:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VARIANTE SECONDARY - Fundo verde lima
+   ═══════════════════════════════════════════════════════════════ */
+.cta-secondary .cta-card {
+  background: var(--secondary);
+}
+
+.cta-secondary .cta-title {
+  color: var(--primary);
+}
+
+.cta-secondary .cta-text {
+  color: rgba(28, 64, 59, 0.75);
+}
+
+.cta-secondary .btn-secondary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.cta-secondary .btn-secondary:hover {
+  background: #2a5a52;
+}
+
+.cta-secondary .btn-outline {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.cta-secondary .btn-outline:hover {
+  background: rgba(28, 64, 59, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VARIANTE OUTLINE - Fundo transparente com borda
+   ═══════════════════════════════════════════════════════════════ */
+.cta-outline .cta-card {
+  background: transparent;
+  border: 2px solid var(--border);
+}
+
+.cta-outline .cta-title {
+  color: var(--text);
+}
+
+.cta-outline .cta-text {
+  color: var(--text-muted);
+}
+
+.cta-outline .btn-secondary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.cta-outline .btn-secondary:hover {
+  background: #2a5a52;
+}
+
+.cta-outline .btn-outline {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.cta-outline .btn-outline:hover {
+  background: rgba(28, 64, 59, 0.05);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ESTILOS COMPARTILHADOS DA SEÇÃO CTA
+   ═══════════════════════════════════════════════════════════════ */
+.cta-card {
+  border-radius: 48px;
   padding: 80px 60px;
   text-align: center;
   position: relative;
@@ -44,7 +231,6 @@
 .cta-title {
   font-size: clamp(28px, 4vw, 44px);
   font-weight: 600;
-  color: #fff;
   margin-bottom: 20px;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -53,7 +239,6 @@
 .cta-text {
   font-size: 18px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 36px;
 }
 
@@ -65,39 +250,35 @@
   flex-wrap: wrap;
 }
 
-.cta-actions .btn-secondary {
-  background: var(--secondary);
-  color: var(--primary);
-}
-
-.cta-actions .btn-secondary:hover {
-  background: var(--secondary-light);
-}
-
-.cta-actions .btn-outline {
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #fff;
-}
-
-.cta-actions .btn-outline:hover {
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE - BOTÕES
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .btn {
+    height: 44px;
+    padding: 0 22px;
+    font-size: 14px;
+  }
+    .btn-lg {
+      height: 50px;
+      padding: 0 28px;
+    }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   RESPONSIVE
+     RESPONSIVE - SEÇÃO CTA
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 992px) {
   .cta-card {
     padding: 64px 48px;
-    border-radius: 28px;
+    border-radius: 12px;
   }
 }
 
 @media (max-width: 768px) {
   .cta-card {
     padding: 48px 32px;
-    border-radius: 24px;
+    border-radius: 12px;
   }
   
   .cta-text {
@@ -119,7 +300,7 @@
 @media (max-width: 480px) {
   .cta-card {
     padding: 40px 24px;
-    border-radius: 20px;
+    border-radius: 12px;
   }
   
   .cta-title {

@@ -53,6 +53,28 @@
   box-shadow: 0 20px 60px rgba(209, 240, 99, 0.35);
 }
 
+/* Card IA - Badge com gradiente animado */
+.showcase-card--ai .showcase-badge {
+  background: linear-gradient(-45deg, #d1f063, #b8d957, #e4f7a3, #c5e85c, #d1f063);
+  background-size: 300% 300%;
+  animation: badgeGradient 4s ease infinite;
+  color: #1C403B;
+  font-weight: 700;
+}
+
+@keyframes badgeGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
 /* Card grande */
 .showcase-card--full {
   grid-column: 1 / -1;

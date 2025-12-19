@@ -1,44 +1,28 @@
 @import './fonts.css';
+@import './components/CTA/CTA.css';
 
-/* ═══════════════════════════════════════════════════════════════
-   DESIGN SYSTEM - CORES PADRÃO LEMIFY
-   ═══════════════════════════════════════════════════════════════ */
 :root {
-  /* Cores principais - Sistema Lemify */
-    --primary: #1C403B;
+  --primary: #1C403B;
     --primary-light: #265650;
     --primary-dark: #142e2a;
     --secondary: #d1f063;
     --secondary-light: #e0f590;
     --secondary-dark: #b8d44f;
-  
-    /* Backgrounds */
-    --bg: #FAFBFA;
+  --bg: #FAFBFA;
     --bg-alt: #F2F5F3;
     --bg-dark: #1C403B;
-  
-    /* Textos */
-    --text: #1C403B;
+  --text: #1C403B;
     --text-muted: #5A6B66;
     --text-light: #fff;
-  
-    /* Bordas */
-    --border: #E5EBE8;
+  --border: #E5EBE8;
     --border-light: rgba(255, 255, 255, 0.2);
-  
-    /* Layout - LARGURA AUMENTADA */
-    --header-h: 72px;
+  --header-h: 72px;
     --container-max: 1400px;
     --section-space: 100px;
-  
-    /* Animations */
-    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   RESET & BASE
-   ═══════════════════════════════════════════════════════════════ */
 *,
 *::before,
 *::after {
@@ -65,9 +49,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   CONTAINER
-   ═══════════════════════════════════════════════════════════════ */
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -81,11 +62,8 @@ body {
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   TIPOGRAFIA
-   ═══════════════════════════════════════════════════════════════ */
 .heading-xl {
-  font-size: clamp(42px, 6vw, 72px);
+  font-size: clamp(38px, 5.5vw, 62px);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -93,7 +71,7 @@ body {
 }
 
 .heading-lg {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -101,7 +79,7 @@ body {
 }
 
 .heading-md {
-  font-size: clamp(22px, 2.5vw, 28px);
+  font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -109,164 +87,83 @@ body {
 }
 
 .text-lg {
-  font-size: clamp(17px, 1.5vw, 20px);
+  font-size: clamp(16px, 1.4vw, 19px);
   line-height: 1.6;
   color: var(--text-muted);
 }
 
 .text-md {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--text-muted);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   BOTÕES
-   ═══════════════════════════════════════════════════════════════ */
-.btn {
+.badge {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-    height: 48px;
-    padding: 0 28px;
-    border-radius: 100px;
-    font-size: 15px;
-    font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-    transition: all 0.25s var(--ease-smooth);
-    white-space: nowrap;
-  }
-  
-  .btn-primary {
-    background: var(--primary);
-    color: #fff;
-  }
-  
-  .btn-primary:hover {
-    background: var(--primary-light);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(28, 64, 59, 0.2);
-  }
-  
-  .btn-secondary {
-    background: var(--secondary);
-    color: var(--primary);
-  }
-  
-  .btn-secondary:hover {
-    background: var(--secondary-light);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(209, 240, 99, 0.35);
-  }
-  
-  .btn-outline {
-    background: transparent;
-    color: var(--primary);
-    border: 1.5px solid var(--border);
-  }
-  
-  .btn-outline:hover {
-    border-color: var(--primary);
-    background: rgba(28, 64, 59, 0.03);
-  }
-  
-  .btn-lg {
-    height: 56px;
-    padding: 0 36px;
-    font-size: 16px;
-  }
-  
-  /* ═══════════════════════════════════════════════════════════════
-     BADGE
-     ═══════════════════════════════════════════════════════════════ */
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
-    background: rgba(209, 240, 99, 0.15);
-    border: 1px solid rgba(209, 240, 99, 0.4);
-    border-radius: 100px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--primary);
-    letter-spacing: 0.02em;
-  }
-  
-  .badge--light {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
-  }
-  
-  /* ═══════════════════════════════════════════════════════════════
-     CARDS
-     ═══════════════════════════════════════════════════════════════ */
-  .card {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 32px;
-    transition: all 0.3s var(--ease-smooth);
-  }
-  
-  .card:hover {
-    border-color: transparent;
-    box-shadow: 0 12px 40px rgba(28, 64, 59, 0.08);
-  }
-  
-  .card-dark {
-    background: var(--primary);
-    border-color: transparent;
-    color: #fff;
-  }
-  
-  .card-accent {
-    background: var(--secondary);
-    border-color: transparent;
-    color: var(--primary);
-  }
-  
-  /* ═══════════════════════════════════════════════════════════════
-     SECTION
-     ═══════════════════════════════════════════════════════════════ */
-  .section {
-    padding: var(--section-space) 0;
-  }
-  
-  .section-header {
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 60px;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(209, 240, 99, 0.15);
+  border: 1px solid rgba(209, 240, 99, 0.4);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+}
+
+.badge--light {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.card:hover {
+  border-color: transparent;
+  box-shadow: 0 12px 40px rgba(28, 64, 59, 0.08);
+}
+
+.card-dark {
+  background: var(--primary);
+  border-color: transparent;
+  color: #fff;
+}
+
+.card-accent {
+  background: var(--secondary);
+  border-color: transparent;
+  color: var(--primary);
+}
+.section {
+  padding: var(--section-space) 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px;
 }
 
 .section-header .heading-lg {
   margin-bottom: 16px;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   LANDING PAGE WRAPPER
-   ═══════════════════════════════════════════════════════════════ */
 .lp {
   min-height: 100vh;
   background: var(--bg);
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
   :root {
     --section-space: 64px;
-  }
-    .btn {
-      height: 44px;
-      padding: 0 22px;
-      font-size: 14px;
-    }
-    .btn-lg {
-      height: 50px;
-      padding: 0 28px;
-    }
+  
+}
+
 }

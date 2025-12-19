@@ -40,9 +40,9 @@ function Features() {
     <section className="features section" id="features">
       <div className="container">
         <div className="section-header">
-          <h2 className="heading-lg">Tudo que você precisa para atender melhor</h2>
+          <h2 className="heading-lg">Tudo o que seu time precisa</h2>
           <p className="text-lg">
-            Funcionalidades pensadas para times que querem escalar sem perder qualidade.
+            Funcionalidades pensadas para escala, controle e performance real.
           </p>
         </div>
         

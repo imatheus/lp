@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 import Header from './components/Header/Header.jsx'
 import Hero from './components/Hero/Hero.jsx'
+import HeroFlow from './components/Hero/HeroFlow.jsx'
 import Features from './components/Features/Features.jsx'
 import Showcase from './components/Showcase/Showcase.jsx'
 import Plans from './components/Plans/Plans.jsx'
@@ -46,6 +47,7 @@ function App() {
     <div className="lp">
       <Header scrolled={scrolled} />
       <Hero />
+      <HeroFlow />
       <Features />
       <Showcase />
       <Plans />

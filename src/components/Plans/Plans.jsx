@@ -111,7 +111,7 @@ function Plans() {
         <div className="section-header">
           <h2 className="heading-lg">Comece simples, cresça com o Lemify</h2>
           <p className="text-lg">
-            Planos criados para se adaptar ao tamanho do seu time — e evoluir junto com o seu negócio.
+            Planos criados para se adaptar ao tamanho do seu time.
           </p>
         </div>
 
