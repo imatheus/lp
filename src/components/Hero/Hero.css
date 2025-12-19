@@ -58,7 +58,7 @@
 }
 
 .hero-flow-section {
-  background-color: #eeeeee;
+  background-color: #eeeeee33;
   border: 1px solid #eeeeee;
   margin: 50px 24px 60px;
   border-radius: 40px;
@@ -86,12 +86,6 @@
     font-weight: 700;
     position: relative;
     z-index: 1;
-    background: linear-gradient(135deg, #e9ffa6, #56ab2f, #dffa8d, #aeff00);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientShift 4s ease infinite;
   }
   
   /* SVG do círculo desenhado à mão */
@@ -105,10 +99,11 @@
     pointer-events: none;
     z-index: 2;
     overflow: visible;
+    
   }
   
   .sketch-path {
-    stroke: var(--primary);
+    stroke: var(--secondary);
     stroke-dasharray: 800;
     stroke-dashoffset: 800;
     transition: stroke-dashoffset 0s;

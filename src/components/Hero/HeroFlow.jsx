@@ -41,11 +41,11 @@ function HeroFlow() {
   });
 
   const initialNodes = useMemo(() => [
-    { id: 'wa', position: { x: 0, y: 0 }, data: { label: <FaWhatsapp size={iconSize} color="#25D366" /> }, style: getIconStyle('#E8F8ED', '#25D366') },
-    { id: 'ig', position: { x: 0, y: 0 }, data: { label: <FaInstagram size={iconSize} color="#E4405F" /> }, style: getIconStyle('#FDEEF0', '#E4405F') },
-    { id: 'fb', position: { x: 0, y: 0 }, data: { label: <FaFacebook size={iconSize} color="#1877F2" /> }, style: getIconStyle('#E7F0FD', '#1877F2') },
-    { id: 'tg', position: { x: 0, y: 0 }, data: { label: <FaTelegram size={iconSize} color="#0088CC" /> }, style: getIconStyle('#E5F4FB', '#0088CC') },
-    { id: 'web', position: { x: 0, y: 0 }, data: { label: <FaGlobe size={iconSize} color="#1C403B" /> }, style: getIconStyle('#E8EDEC', '#1C403B') },
+    { id: 'wa', position: { x: 0, y: 0 }, data: { label: <FaWhatsapp size={iconSize} color="#1C403B" /> }, style: getIconStyle('transparent', '#1C403B') },
+    { id: 'ig', position: { x: 0, y: 0 }, data: { label: <FaInstagram size={iconSize} color="#1C403B" /> }, style: getIconStyle('transparent', '#1C403B') },
+    { id: 'fb', position: { x: 0, y: 0 }, data: { label: <FaFacebook size={iconSize} color="#1C403B" /> }, style: getIconStyle('transparent', '#1C403B') },
+    { id: 'tg', position: { x: 0, y: 0 }, data: { label: <FaTelegram size={iconSize} color="#1C403B" /> }, style: getIconStyle('transparent', '#1C403B') },
+    { id: 'web', position: { x: 0, y: 0 }, data: { label: <FaGlobe size={iconSize} color="#1C403B" /> }, style: getIconStyle('transparent', '#1C403B') },
     {
       id: 'preview',
       position: { x: 0, y: 0 },
