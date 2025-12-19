@@ -56,7 +56,7 @@ function HeroFlow() {
         boxShadow: 'none',
         borderRadius: 0
       },
-      data: { label: <img src="banner.png" alt="Lemify" className="hero-preview" /> },
+      data: { label: <img src="tela-chat.svg" alt="Lemify" className="hero-preview" /> },
     },
   ], [nodeSize, iconSize, isMobile]);
 
