@@ -1,12 +1,13 @@
 /* Plans */
 .plans {
   background: transparent;
+  padding: var(--section-space) 0;
 }
 
 .plans-wrapper {
   background: transparent;
   margin: 0 15px;
-  padding: 40px 40px 80px;
+  padding: 40px 40px;
 }
 
 .plans-grid {

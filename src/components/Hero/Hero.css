@@ -33,13 +33,32 @@
   margin: 24px 0;
 }
 
+.hero .badge {
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+}
 .hero-title .highlight {
-  background: linear-gradient(135deg, #728a4b00, #d2f48f, #d1f063, #56ab2f);
+  background: linear-gradient(35deg, #728a4b00, #bee66e, #d1f063, #56ab2f);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradientShift 4s ease infinite;
+  display: inline-block;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  
+  
+  .hero-title .highlight.fade-slide-out {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  
+  .hero-title .highlight.fade-slide-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @keyframes gradientShift {
@@ -65,13 +84,17 @@
   flex-wrap: wrap;
 }
 
+.hero-actions .btn-primary svg {
+  color: var(--secondary);
+}
 .hero-flow-section {
   background-color: #d2f48f;
   border: 1px solid #eeeeee;
-  margin: 0px 15px 60px;
+  margin: 0px 15px;
+    margin-bottom: var(--section-space);
   border-radius: 40px;
   padding: 60px 1px 10px;
-    margin-top: 100px;
+  margin-top: 100px;
     overflow: visible;
 }
 

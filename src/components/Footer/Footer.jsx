@@ -21,7 +21,7 @@ function Footer() {
               <a href="https://linkedin.com/company/pepchat" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <FaLinkedin size={18} />
               </a>
-              <a href="https://wa.me/5511949802138" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <a href="https://wa.me/5511957839501" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <FaWhatsapp size={18} />
               </a>
             </div>
@@ -42,15 +42,15 @@ function Footer() {
             <a href="#">Sobre nós</a>
             <a href="#">Blog</a>
             <a href="#">Carreiras</a>
-            <a href="mailto:contato@pepchat.com.br">Contato</a>
+            <a href="mailto:contato@lemify.com.br">Contato</a>
           </div>
 
           {/* Suporte */}
           <div className="footer-links">
             <div className="footer-links-title">Suporte</div>
             <a href="#">Central de ajuda</a>
-            <a href="https://wa.me/5511949802138" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
-            <a href="mailto:suporte@pepchat.com.br">Email de suporte</a>
+            <a href="https://wa.me/5511957839501" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+            <a href="mailto:suporte@lemify.com.br">Email de suporte</a>
             <a href="#">Status do sistema</a>
           </div>
         </div>

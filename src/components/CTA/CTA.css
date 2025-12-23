@@ -190,12 +190,62 @@
 /* ═══════════════════════════════════════════════════════════════
    ESTILOS COMPARTILHADOS DA SEÇÃO CTA
    ═══════════════════════════════════════════════════════════════ */
+/* Wrapper para criar efeito de camadas empilhadas */
+.cta-card-wrapper {
+  position: relative;
+}
+
+/* Camadas empilhadas atrás do card principal */
+.cta-card-wrapper::before,
+.cta-card-wrapper::after {
+  content: "";
+  position: absolute;
+  border-radius: 48px;
+  z-index: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Segunda camada - estado inicial (separada) */
+.cta-card-wrapper::before {
+  top: -8px;
+  left: 12px;
+  right: 12px;
+  bottom: 8px;
+  background: transparent;
+  border: 2px solid rgba(28, 64, 59, 0.3);
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Terceira camada - estado inicial (mais separada) */
+.cta-card-wrapper::after {
+  top: -16px;
+  left: 24px;
+  right: 24px;
+  bottom: 16px;
+  background: transparent;
+  border: 2px solid rgba(28, 64, 59, 0.15);
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+/* Estado convergido - camadas se juntam */
+.cta-card-wrapper.layers-converged::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-card-wrapper.layers-converged::after {
+  opacity: 1;
+  transform: translateY(0);
+}
 .cta-card {
   border-radius: 48px;
   padding: 80px 60px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 /* Decorative elements */

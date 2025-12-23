@@ -139,7 +139,7 @@ function HeroFlow() {
           </h2>
           <p className="text-lg">
             Chega de abas abertas, mensagens perdidas e clientes esperando. <br />
-            O Lemify organiza seu pré e pós-venda.
+            O Lemify organiza tudo para você!
           </p>
         </div>
       </div>

@@ -5,7 +5,7 @@ function Header({ scrolled }) {
   const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
-    const sections = ['features', 'plans', 'faq'];
+    const sections = ['features', 'plans', 'contato'];
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 150;
@@ -67,11 +67,11 @@ function Header({ scrolled }) {
             Planos
           </a>
           <a
-            href="#faq"
-            className={activeSection === 'faq' ? 'active' : ''}
-            onClick={(e) => handleClick(e, 'faq')}
+            href="#contato"
+            className={activeSection === 'contato' ? 'active' : ''}
+            onClick={(e) => handleClick(e, 'contato')}
           >
-            FAQ
+            Contato
           </a>
         </nav>
 

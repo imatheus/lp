@@ -42,7 +42,7 @@ function Features() {
         <div className="section-header">
           <h2 className="heading-lg">Tudo o que seu time precisa</h2>
           <p className="text-lg">
-            Funcionalidades pensadas para escala, controle e performance real.
+            Funcionalidades pensadas para escala, controle e performance.
           </p>
         </div>
         

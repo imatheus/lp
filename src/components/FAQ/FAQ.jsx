@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HiPlus } from 'react-icons/hi2';
+import { FaWhatsapp } from 'react-icons/fa';
 import './FAQ.css';
 
 const FAQ_ITEMS = [
@@ -37,24 +38,27 @@ function FAQ() {
       <div className="container">
         <div className="faq-grid">
           <div className="faq-intro">
-            <h2 className="heading-lg">Perguntas frequentes</h2>
+            <h2 className="heading-lg">Dúvidas? A gente resolve</h2>
             <p className="text-lg">
-              Tire suas dúvidas sobre o Lemify. Se não encontrar o que procura, fale com a gente.
+              Respostas rápidas para as perguntas mais comuns. Não achou o que procura? Nosso time está a um clique de distância.
             </p>
 
-            <div className="faq-contact">
-              <div className="faq-contact-title">Precisa de ajuda?</div>
-              <p className="faq-contact-text">
-                Nossa equipe está pronta para tirar suas dúvidas e ajudar na implantação.
-              </p>
-              <a
-                href="https://wa.me/5511949802138"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                Falar no WhatsApp
-              </a>
+            <div className="faq-image">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="80" fill="#d1f063" opacity="0.2" />
+                <circle cx="100" cy="80" r="35" fill="#1C403B" />
+                <path d="M 100 115 Q 85 125, 70 115" stroke="#1C403B" strokeWidth="3" fill="none" strokeLinecap="round" />
+                <path d="M 100 115 Q 115 125, 130 115" stroke="#1C403B" strokeWidth="3" fill="none" strokeLinecap="round" />
+                <circle cx="90" cy="75" r="4" fill="#fff" />
+                <circle cx="110" cy="75" r="4" fill="#fff" />
+                <path d="M 60 140 Q 100 160, 140 140" stroke="#d1f063" strokeWidth="4" fill="none" strokeLinecap="round" />
+                <circle cx="50" cy="60" r="8" fill="#d1f063" opacity="0.6" />
+                <text x="48" y="65" fontSize="12" fill="#1C403B" fontWeight="bold">?</text>
+                <circle cx="150" cy="50" r="8" fill="#d1f063" opacity="0.6" />
+                <text x="148" y="55" fontSize="12" fill="#1C403B" fontWeight="bold">?</text>
+                <circle cx="160" cy="120" r="8" fill="#d1f063" opacity="0.6" />
+                <text x="158" y="125" fontSize="12" fill="#1C403B" fontWeight="bold">?</text>
+              </svg>
             </div>
           </div>
 

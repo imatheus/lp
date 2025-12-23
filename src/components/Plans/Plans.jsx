@@ -263,14 +263,14 @@ function Plans() {
                             </div>
                           </a>
                           <a
-                            href={`https://wa.me/5511949802138?text=Olá! Gostaria de agendar uma demonstração do Lemify - Plano ${plan.name}`}
+                            href={`https://wa.me/5511957839501?text=Olá! Gostaria de agendar uma demonstração do Lemify - Plano ${plan.name}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="plan-dropdown-item"
                           >
                             <PiCalendarCheck className="plan-dropdown-icon" />
                             <div className="plan-dropdown-content">
-                              <span className="plan-dropdown-title">Agendar Demo</span>
+                              <span className="plan-dropdown-title">Agendar Demostração</span>
                               <span className="plan-dropdown-desc">Fale com um especialista</span>
                             </div>
                           </a>
@@ -286,7 +286,7 @@ function Plans() {
           <div className="plans-footer">
             <p className="plans-footer-text">
               Precisa de um plano customizado?
-              <a href="https://wa.me/5511949802138" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5511957839501" target="_blank" rel="noopener noreferrer">
                 Fale com nosso time
               </a>
             </p>
