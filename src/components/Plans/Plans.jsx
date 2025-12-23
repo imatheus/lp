@@ -85,27 +85,24 @@ const PLAN_FEATURES = [
 
 function Plans() {
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [plans, setPlans] = useState(FALLBACK_PLANS);
+  const [plans, setPlans] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // Buscar planos da API
   useEffect(() => {
     const fetchPlans = async () => {
       try {
-        const response = await fetch('https://app.lemify.com.br/api/plans');
+        const response = await fetch('https://app.lemify.com.br/plans');
         if (response.ok) {
           const data = await response.json();
-          // Ordenar por valor e pegar apenas os 3 principais (ou ajustar conforme necessário)
+          // Ordenar por valor
           const sortedPlans = data
             .filter(p => p.isPublic !== false) // Filtrar planos públicos
-            .sort((a, b) => a.value - b.value)
-            .slice(0, 3);
-          if (sortedPlans.length > 0) {
-            setPlans(sortedPlans);
-          }
+            .sort((a, b) => a.value - b.value);
+          setPlans(sortedPlans);
         }
       } catch (error) {
-        console.log('Usando planos fallback:', error.message);
+        console.log('Erro ao buscar planos:', error.message);
       } finally {
         setLoading(false);
       }
@@ -211,17 +208,22 @@ function Plans() {
                     {/* Recursos com check/x */}
                     <li className={`plan-feature ${!plan.useCampaigns ? 'plan-feature--disabled' : ''}`}>
                       {plan.useCampaigns ? <HiCheck className="plan-feature-icon plan-feature-icon--check" /> : <HiXMark className="plan-feature-icon plan-feature-icon--x" />}
-                      <span>Campanhas</span>
+                      <span>Campanhas{plan.useCampaigns && plan.campaignsPerMonthLimit ? ` (${plan.campaignsPerMonthLimit}/mês)` : ''}</span>
+                    </li>
+
+                    <li className={`plan-feature ${!plan.useMenu ? 'plan-feature--disabled' : ''}`}>
+                      {plan.useMenu ? <HiCheck className="plan-feature-icon plan-feature-icon--check" /> : <HiXMark className="plan-feature-icon plan-feature-icon--x" />}
+                      <span>Menu Interativo</span>
                     </li>
 
                     <li className={`plan-feature ${!plan.useScheduler ? 'plan-feature--disabled' : ''}`}>
                       {plan.useScheduler ? <HiCheck className="plan-feature-icon plan-feature-icon--check" /> : <HiXMark className="plan-feature-icon plan-feature-icon--x" />}
-                      <span>Agendamentos</span>
+                      <span>Agendamento de Mensagens</span>
                     </li>
 
                     <li className={`plan-feature ${!plan.useChatbotFlows ? 'plan-feature--disabled' : ''}`}>
                       {plan.useChatbotFlows ? <HiCheck className="plan-feature-icon plan-feature-icon--check" /> : <HiXMark className="plan-feature-icon plan-feature-icon--x" />}
-                      <span>Chatbot</span>
+                      <span>Fluxos de Chatbot</span>
                     </li>
 
                     <li className={`plan-feature ${!plan.useInternalchat ? 'plan-feature--disabled' : ''}`}>
@@ -229,12 +231,10 @@ function Plans() {
                       <span>Chat Interno</span>
                     </li>
 
-                    {plan.useLemiAI && (
-                      <li className="plan-feature">
-                        <HiCheck className="plan-feature-icon plan-feature-icon--check" />
-                        <span>Lemi AI</span>
-                      </li>
-                    )}
+                    <li className={`plan-feature ${!plan.useLemiAI ? 'plan-feature--disabled' : ''}`}>
+                      {plan.useLemiAI ? <HiCheck className="plan-feature-icon plan-feature-icon--check" /> : <HiXMark className="plan-feature-icon plan-feature-icon--x" />}
+                      <span>Lemi AI (Inteligência Artificial)</span>
+                    </li>
                   </ul>
 
                   <div className="plan-actions">
