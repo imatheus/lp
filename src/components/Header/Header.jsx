@@ -8,7 +8,7 @@ function Header({ scrolled }) {
     const sections = ['features', 'plans', 'contato'];
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 150;
+      const scrollPosition = window.scrollY + 10;
 
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
